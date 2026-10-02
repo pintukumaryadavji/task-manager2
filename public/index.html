@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taskboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="auth" class="auth hidden">
+  <div class="auth-card">
+    <h1>Taskboard</h1>
+    <p class="sub">Plan it, move it, finish it.</p>
+    <div class="tabs"><button id="tabLogin" class="on">Log in</button><button id="tabReg">Create account</button></div>
+    <div id="authForm">
+      <input id="aName" placeholder="Your name" class="hidden" autocomplete="name">
+      <input id="aEmail" type="email" placeholder="Email" autocomplete="email">
+      <input id="aPass" type="password" placeholder="Password (min 6 characters)" autocomplete="current-password">
+      <p id="aErr" class="err"></p>
+      <button id="aGo" class="primary">Log in</button>
+    </div>
+  </div>
+</section>
+
+<main id="app" class="hidden">
+  <header>
+    <h1>Taskboard</h1>
+    <div class="who"><span id="live" class="dot" title="Live updates"></span><span id="uName"></span><button id="logout" class="ghost">Log out</button></div>
+  </header>
+  <form id="taskForm" class="composer">
+    <input id="tTitle" placeholder="What needs doing?" required>
+    <input id="tDesc" placeholder="Details (optional)">
+    <select id="tPri"><option value="low">Low</option><option value="medium" selected>Medium</option><option value="high">High</option></select>
+    <input id="tDue" type="date">
+    <button class="primary" id="tSave">Add task</button>
+    <button type="button" class="ghost hidden" id="tCancel">Cancel</button>
+  </form>
+  <div class="filters">
+    <input id="search" placeholder="Search tasks">
+    <select id="fStatus"><option value="">All statuses</option><option value="todo">To do</option><option value="in_progress">In progress</option><option value="done">Done</option></select>
+    <select id="fSort"><option value="new">Newest first</option><option value="due">Due date</option><option value="priority">Priority</option></select>
+  </div>
+  <p id="stats" class="stats"></p>
+  <div id="board" class="board"></div>
+</main>
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

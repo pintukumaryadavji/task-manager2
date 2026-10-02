@@ -1,0 +1,9 @@
+{
+  "name": "task-manager",
+  "version": "3.0.0",
+  "description": "Full-stack task management app: auth, CRUD, WebSocket real-time updates, responsive UI",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "dev": "node --watch server.js" },
+  "engines": { "node": ">=16" },
+  "dependencies": { "bcryptjs": "^2.4.3", "compression": "^1.7.4", "express": "^4.19.2", "jsonwebtoken": "^9.0.2", "ws": "^8.18.0" }
+}
